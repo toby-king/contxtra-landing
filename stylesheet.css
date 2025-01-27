@@ -87,6 +87,16 @@ video::-internal-media-controls-overlay-cast-button {
     border: none;
     background: none;
 }
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    background-image: url(particle.css);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
 
 @keyframes fadeIn {
     from {
