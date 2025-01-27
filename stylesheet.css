@@ -1,0 +1,138 @@
+@font-face {
+	font-family: "Montserrat";
+	src: url("assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+body {
+    background-color: #fff;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
+#page {
+    position: absolute;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.content-body {
+    width: 80%;
+    margin: 0 auto;
+}
+.links {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    font-family: "Montserrat";
+}
+.links a:hover  {
+    text-decoration: underline;
+    color: #000;
+}
+#page .container {
+    width: auto;
+}
+.logo {
+    max-width: 20vw;
+    height: auto;
+}
+.text-thin {
+    font-family: "Montserrat";
+    color: #000;
+    margin: 0;
+    padding: 0.5rem;
+}
+.form-container {
+    min-height: 75px;
+}
+.fadeIn {
+    animation: fadeIn 1s linear forwards;
+}
+.delay {
+    opacity: 0;
+    animation-delay: 1.5s;
+}
+.email-form {
+    border-radius: 0;
+    width: 50%;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #b2b2b2;
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 1.5rem;
+}
+.email-form:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+.submit {
+    background: none;
+    border: none;
+}
+.submit svg:hover {
+    fill: #000;
+}
+.submit:focus {
+    border: none;
+    background: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .logo {
+        max-width: 25vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        max-width: 50vw;
+    }
+    #cs-title {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
