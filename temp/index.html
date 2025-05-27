@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#fff">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Contxtra is a platform that connects social media conversation to its context, making it effortless to gain a deeper understanding of topics seen online.">
+        <meta property="og:image" content="/assets/images/preview.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <title>CONTXTRA | See Beyond the Scroll</title>
+
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="jquery-3.3.1.slim.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="modernizr.js"></script>
+        
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div class="container-fluid" id="page">
+            <div class="header">
+                <div class="nav-wrapper p-3" id="top">
+                    <nav class="navbar navbar-expand-md page-content" id="banner">
+                        <a href="/">
+                            <img src="assets/images/icon.png" alt="CONTXTRA Logo" class="logo"></img>
+                            <img src="assets/images/textmark.png" alt="CONTXTRA Logo" class="logo-text"></img>
+                        </a>
+                
+                        <div class=menu-toggle>
+                            <label for="check" onclick="checkCheck()">
+                                <input type="checkbox" id="check" data-toggle="collapse" data-target="#collapseNav">
+                                <div class="hamburger"></div>
+                            </label>
+                        </div>
+                
+                        <div class="collapse navbar-collapse justify-content-end" id="collapseNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="header-content page-content row">
+                    <div class="col-lg-6 animate-reveal-y">
+                        <h1 class="tagline">See Beyond the Scroll.</h1>
+                        <p class="my-4">Contxtra gives context to the conversation.</p>
+                        <a class="contact-btn" href="#contact"><button>Join the Beta!</button></a>
+                        <div id="about">
+                            <h1 class="title animate-reveal-y delay">What is CONTXTRA</h1>
+                            <p>Contxtra is a platform that connects social media conversation to its context, making it effortless to gain a deeper understanding of topics seen online.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mockup-container animate-reveal-y delay">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/webp/mockup.webp">
+                            <source type="image/png" srcset="assets/images/mockup.png">
+                            <img src="assets/images/mockup.png" alt="Phone Mockup" id="mockup">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content mt-5">
+                <div class="services row">
+                    <div class="col-md-4">
+                        <picture>
+                            <source type="image/png" srcset="assets/images/tempicon.png">
+                            <img src="assets/images/tempicon.png" alt="Effortless Context">
+                        </picture>
+                        <h3>Efforless Context</h3>
+                        <p>Access extra context to topics you see online.</p>
+                    </div>
+                    <div class="col-md-4">
+                            <source type="image/png" srcset="assets/images/tempicon.png">
+                            <img src="assets/images/tempicon.png" alt="Information Without Influence">
+                        </picture>
+                        <h3>Information Without Influence</h3>
+                        <p>Explore a variety of relevant sources.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <picture>
+                            <source type="image/png" srcset="assets/images/tempicon.png">
+                            <img src="assets/images/tempicon.png" alt="Identify Misleading Narratives">
+                        </picture>
+                        <h3>Identify Misleading Narratives</h3>
+                        <p>Giving you the tools to exercise your own judgment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mission">
+                <div class="mission-container row">
+                    <div class="col-lg-6">
+                        <picture>
+                            <source type="image/webp" srcset="assets/images/webp/mission.webp">
+                            <source type="image/png" srcset="assets/images/mission.png">
+                            <img src="assets/images/mission.png" alt="Our Mission" id="mission-img">
+                        </picture>
+                    </div>
+                    <div class="col-lg-6 mission-content">
+                        <h1 class="title">Our Mission</h1>
+                        <p>We're on a mission to empower and inform social media users by making context accessible to everyone.</p>
+                        <a class="contact-btn" href="#solutions"><button>Get in Touch</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content solutions" id="solutions">
+                <h1 class="title text-center text-dark">How It Works</h1>
+                <div class="row my-5">
+                    <div class="col-4">
+                        <h4>1. See something online?</h4>
+                        <p>Currently working on text-only posts from X and Bluesky - Greater functionality coming soon!</p>
+                    </div>
+                    <div class="col-8">
+                        <div class="lines-right"></div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-8">
+                        <div class="lines-left"></div>
+                    </div>
+                    <div class="col-4" id="text-right">
+                        <h4>2. Share with CONTXTRA</h4>
+                        <p>Copy and paste link to CONTXTRA - Direct post sharing coming soon!</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4">
+                        <h4>3. CONTXTRA kicks in</h4>
+                        <p>Analysing the post, identifying the topic and gathering relevant context for you to explore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="page-content" id="contact">
+                    <h1 class="title text-center">GET INVOLVED</h1>
+                    <p class="text-center"><b>Be the first to shape the future of online context.</b></p>
+                    <p>Contxtra is currently in early access, and we're looking for curious users and thoughtful testers.</p>
+                    <form action="#" method="POST" class="position-relative d-flex justify-content-center w-100">
+                        <div class="input-group input-group-pill">
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email" /* Changed placeholder to "Email" */
+                                aria-label="Enter your email address"
+                                required
+                                class="form-control form-control-custom"
+                            >
+                            <div class="input-group-append-button">
+                                <button
+                                    type="submit"
+                                    class="arrow-button"
+                                >
+                                    &rarr; </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-content">
+                    <img src="assets/images/icon-white.png" alt="CONTXTRA Logo">
+                    <p>&copy CONTXTRA 2025. All Rights Reserved</p>
+                </div>
+            </footer>
+        </div>
+        <div id="particles-js"></div>
+    </body>
+    <script src="scripts/particles.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-item');
+        const menuToggle = document.getElementById('collapseNav');
+        const checkbox = document.getElementById('check');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                bsCollapse.toggle();
+                checkbox.checked = false;
+            });
+        });
+    </script>
+</html>
