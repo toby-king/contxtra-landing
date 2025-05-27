@@ -62,7 +62,7 @@ a:hover {
 .hamburger::after {
     content: "";
     display: block;
-    background: #fff;
+    background: #622D91;
     width: 1.5rem;
     height: 0.25rem;
 }
