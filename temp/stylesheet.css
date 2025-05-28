@@ -1,302 +1,388 @@
+/* Fonts */
 @font-face {
     font-family: "Montserrat";
     src: url("assets/fonts/Montserrat-Regular.ttf");
     font-display: swap;
 }
 @font-face {
-    font-family: "Oswald";
-    src: url("assets/fonts/Oswald-Regular.ttf");
+    font-family: "Stolzl";
+    src: url("assets/fonts/stolzl_bold.otf");
     font-display: swap;
 }
+
+/* Global Styles (Mobile-First Base) */
 html {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Flex container for sticky footer */
+    flex-direction: column; /* Stack content vertically */
 }
 * {
-    font-family: "Montserrat";
+    box-sizing: border-box; /* Consistent box model */
 }
+
 a {
     color: #000;
     text-decoration: none;
 }
-h1, h2, h3, h4 {
-    font-family: "Oswald";
-    text-transform: uppercase;
-}
-.nav-link {
-    color: #000 !important;
-}
-.nav-link:hover {
-    color: #000;
-}
 a:hover {
-    color: #622D91;
+    color: #622D91; /* Consistent hover color */
     text-decoration: underline;
 }
+
+h1, h2, h3, h4 {
+    font-family: "Stolzl", sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+} 
+
 #page {
     padding: 0;
-    position: absolute;
+    position: relative;
+    flex-grow: 1; /* Allows #page to grow and push footer down */
 }
+
 .page-content {
     width: 100%;
-    max-width: 80vw;
+    max-width: 1200px; /* More robust max-width for content */
     margin: 0 auto;
+    padding-left: 1rem; /* Bootstrap gutter compensation */
+    padding-right: 1rem; /* Bootstrap gutter compensation */
 }
-.logo {
-    max-width: 4rem;
+
+/* Navbar */
+.navbar-brand .logo {
+    max-width: 3rem; 
+    height: auto;
 }
-.logo-text {
-    max-width: 14rem;
+.navbar-brand .logo-text {
+    max-width: 10rem; 
+    height: auto;
 }
-.logo-title {
-    font-family: "Oswald";
-    letter-spacing: 9.6px;
-    font-weight: 700;
-    color: #fff;
-    margin-left: 1.5rem;
+
+.nav-link {
+    color: #000 !important;
+    padding: 0.5rem 1rem;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    text-align: right;
+}
+.nav-link:hover {
+    color: #622D91 !important; 
 }
 .nav-item {
-    margin: 0 1rem 0 1rem;
+    margin: 0 0.5rem; 
 }
-.hamburger,
+
+/* Hamburger Menu (Bootstrap 5 compatible) */
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.hamburger {
+    display: block;
+    width: 1.75rem;
+    height: 0.2rem;
+    background-color: #622D91;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 2px;
+}
 .hamburger::before,
 .hamburger::after {
     content: "";
     display: block;
-    background: #622D91;
-    width: 1.5rem;
-    height: 0.25rem;
+    width: 100%;
+    height: 100%;
+    background-color: #622D91;
+    position: absolute;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 2px;
 }
 .hamburger::before {
-    transform: translateY(-0.5rem);
-    transition: all 0.5s;
+    transform: translateY(-0.6rem);
 }
 .hamburger::after {
-    transform: translateY(-0.1rem);
-    transition: all 0.5s;
+    transform: translateY(0.6rem);
 }
-.hamburger {
-    background: none;
-    transition: all 0.5s;
-    z-index: 2;
-    position: relative;
+.navbar-toggler[aria-expanded="true"] .hamburger {
+    background-color: transparent;
 }
-input[type="checkbox"] {
-    display: none;
+.navbar-toggler[aria-expanded="true"] .hamburger::before {
+    transform: translateY(0) rotate(45deg);
 }
-input[type="checkbox"]:checked ~ .hamburger::before {
-    transform: rotate(45deg) translateX(0rem) translateY(-0rem);
+.navbar-toggler[aria-expanded="true"] .hamburger::after {
+    transform: translateY(0) rotate(-45deg);
 }
-input[type="checkbox"]:checked ~ .hamburger::after {
-    transform: rotate(-45deg) translateX(0.15rem) translateY(-0.2rem);
+
+/* Header Section */
+.header {
+    padding-bottom: 4rem;
+    z-index: 1; /* Ensure content is above particles */
 }
-input[type="checkbox"]:checked ~ .hamburger {
-    transform: translateY(-0.1rem);
-}
+
 .header-content {
-    padding-top: 8rem;
+    padding-top: 2rem; 
+    padding-bottom: 2rem;
 }
+
 .header-content .tagline {
-    line-height: 150%;
+    font-size: clamp(2.5rem, 8vw, 5rem); /* Fluid font size */
+    line-height: 1.2;
     color: #000;
     font-weight: 700;
-    font-size: 7rem;
     text-transform: capitalize;
+    margin-bottom: 1rem;
 }
 .header-content p {
-    line-height: 150%;
-    color: #000;
-    font-size: 1.6rem;
-    width: 80%;
+    font-size: clamp(1rem, 2.5vw, 1.4rem); /* Fluid font size */
+    width: 100%;
+    max-width: 600px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 .contact-btn button {
     background-color: #FBD050;
-    font-family: "Oswald";
+    font-family: "Stolzl", sans-serif;
     border-radius: 50px;
     border: none;
-    padding: .8rem 4rem;
+    padding: .8rem 3rem;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem; /* Space below paragraph */
 }
 .contact-btn button:hover {
     background-color: #fad976;
 }
+
 .mockup-container {
-    text-align: right;
+    text-align: center;
+    margin-top: 3rem; /* Space for mobile */
 }
 #mockup {
-    height: 80%;
+    max-width: 100%;
+    height: auto;
+    max-height: 70vh; /* Control max height on large screens */
+    object-fit: contain;
 }
+
+/* General Section Titles */
 .title {
     color: #622D91;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 0.15rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Fluid font size */
+    margin-bottom: 1rem;
 }
-.subtitle {
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
+
+/* About Section */
 #about {
-    margin-top: 5rem;
+    margin-top: 3rem; /* Adjusted for correct HTML structure */
+    padding-bottom: 3rem;
 }
 #about p {
-    line-height: 150%; /* 36px */
-    letter-spacing: 2.4px;
-    font-size: 1.2rem;
-    margin-top: 2rem;
+    line-height: 1.8;
+    letter-spacing: 0.05rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-top: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.services, .valprop {
+
+/* Services Section */
+.services {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
-.services img, .valprop img {
-    height: 100px;
-    width: 100px;
-    margin: 2rem 0;
+.service-icon { 
+    height: 80px; /* Fixed height for icons, can be made responsive with `max-width` if preferred */
+    width: 80px;
+    margin: 1.5rem auto;
+    display: block;
 }
 .services h3 {
     font-weight: 700;
-    font-size: calc(1.275rem + .3vw);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin-bottom: 0.5rem;
 }
 .services p {
-    width: 80%;
-    margin: 0 auto;
-    letter-spacing: 2px;
-    margin-top: 1rem;
+    width: 90%;
+    margin: 0.5rem auto;
+    letter-spacing: 0.02rem;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
 }
-.valprop p {
-    font-family: "Oswald";
-    font-weight: 700;
-    width: 60%;
-    margin: 0 auto;
-}
+
+/* Mission Section */
 .mission {
     background-color: #F1F1F1;
-    margin-top: 5rem;
-    padding: 1rem;
+    margin-top: 4rem;
+    padding: 3rem 0;
 }
 .mission-container {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px; /* Consistent with page-content */
     margin: 0 auto;
 }
 .mission-content {
     display: flex;
-    justify-content: center;
-    align-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 #mission-img {
     width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin-top: 2rem;
 }
 .mission p {
-    line-height: 175%; /* 63px */
-    letter-spacing: 2px;
-    font-size: 1.6rem;
-    width: 90%;
+    line-height: 1.75;
+    letter-spacing: 0.05rem;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    width: 100%;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
 }
+
+/* Solutions Section */
 .solutions {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
-#text-right {
-    text-align: right;
+.solutions .row {
+    margin-bottom: 3rem;
+}
+.solutions .row:last-child {
+    margin-bottom: 0;
+}
+
+.lines-left, .lines-right {
+    height: 100px;
+    margin: 1rem auto;
+    border-top: #000 solid 1px;
+    width: 80%; /* Percentage width for lines */
+    max-width: 400px; /* Max width for lines */
 }
 .lines-left {
-    height: 80%;
-    margin: 1rem;
-    border-top: #000 solid 1px;
     border-left: #000 solid 1px;
 }
 .lines-right {
-    height: 80%;
-    margin: 1rem;
-    border-top: #000 solid 1px;
     border-right: #000 solid 1px;
 }
+
+/* Contact Section */
 .contact {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: #373737;
     color: #fff;
 }
 .contact .title {
     color: #fff;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .contact p {
     text-align: center;
-    font-size: 1.6rem;
-    margin-bottom: 3rem;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contact form {
-    width: 50%;
+    width: 100%;
+    max-width: 400px;
     margin: auto;
 }
+
+/* Email Form Styling */
 .input-group-pill {
-    background-color: #fff; /* White background for the entire pill */
-    border-radius: 50rem; /* Pill shape for the container */
-    overflow: hidden; /* Ensures content stays within rounded corners */
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    max-width: 400px;
+    background-color: #fff;
+    border-radius: 50rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 .form-control-custom {
-    border: none; /* Remove default input border */
-    background-color: transparent; /* Make input background transparent to show parent's white */
-    padding-left: 1.5rem; /* Adjust padding for text */
-    padding-right: 3.5rem; /* Make space for the button */
-    height: 3.5rem; /* Fixed height for consistent pill shape */
-    font-size: 1.1rem; /* Adjust font size */
-    color: #212529; /* Dark text color */
+    border: none;
+    background-color: transparent;
+    padding-left: 1.5rem;
+    padding-right: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.1rem;
+    color: #212529;
 }
 .form-control-custom::placeholder {
-    color: #6c757d; /* Placeholder color */
+    color: #6c757d;
 }
 .input-group-append-button {
     position: absolute;
-    right: 0.5rem; /* Adjust position from the right edge of the pill */
+    right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2; /* Ensure button is above input */
+    z-index: 2;
 }
 .arrow-button {
-    font-size: 1.5rem; /* Larger arrow to match image */
+    font-size: 1.5rem;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 0.75rem; /* Adjust padding for the button itself */
-    background-color: transparent; /* Transparent background for the button */
-    color: #212529; /* Black arrow color */
-    border-radius: 50%; /* Make the button circular if needed, or keep pill for consistency */
+    padding: 0.5rem 0.75rem;
+    background-color: transparent;
+    color: #212529;
+    border-radius: 50%;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
     border: none;
 }
 .arrow-button:hover {
-    color: #007bff; /* Slightly highlight arrow on hover */
+    color: #007bff;
 }
+
+/* Footer */
 footer {
     background-color: #373737;
+    padding: 1rem 0;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 .footer-content {
-    width: 50%;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
-footer img {
-    height: 40px;
-    width: 40px;
-    margin-right: 1rem;
+.footer-logo { /* Specific class for footer logo */
+    height: 35px;
+    width: 35px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem; /* Add margin for stacked items on mobile */
 }
 footer p {
     color: #fff;
-    display: inline;
-    letter-spacing: 1px;
+    letter-spacing: 0.05rem;
+    font-size: 0.85rem;
+    margin: 0;
 }
-/* Animations */
 
+/* Animations (Adjusted for fluidity) */
 .animate-reveal-y {
     opacity: 0;
     -webkit-animation: revealY 1.8s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
@@ -379,146 +465,158 @@ footer p {
     }
   }
   
-/* Media Queries */
-@media screen and (max-width: 1172px) {
+/* Media Queries (Mobile-First Approach) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .navbar-brand .logo {
+        max-width: 3.5rem;
+    }
+    .navbar-brand .logo-text {
+        max-width: 12rem;
+    }
+    .header-content .tagline {
+        font-size: clamp(3rem, 9vw, 5rem);
+    }
     .header-content p {
-        font-size: 1.2rem;
+        font-size: clamp(1.1rem, 2.8vw, 1.4rem);
     }
-    .header-content h1 {
-        font-size: 2.8rem;
+    #about {
+        margin-top: 4rem; 
     }
-}
-@media screen and (max-width: 992px) {
-    #mockup {
-        height: 60%;
+    .services h3 {
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
     }
-    .mission {
-        text-align: center;
+    .services p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
     }
     .mission p {
-        font-size: 1.4rem;
-        width: 100%;
+        font-size: clamp(1.1rem, 2.8vw, 1.4rem);
     }
-    #mission-img {
-        width: 80%;
+    .contact p {
+        font-size: clamp(1.1rem, 2.8vw, 1.4rem);
     }
-    .landing-form {
-        max-width: 60vw;
-    }
-}
-@media screen  and (max-width: 800px) {
-    .mockup-container {
-        text-align: center;
-        margin-top: 3rem;
-    }
-    #mockup {
-        height: 50%;
-    }
-    #about p {
-        width: 100%;
-    }
-    #about {
-        margin-top: 28rem;
-    }
-    .img-detection img {
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
-}
-@media screen and (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .navbar-collapse {
-        justify-content: center !important;
-    }
-}
-@media screen and (max-width: 576px) {
-    .header-content {
-        padding-top: 3rem;
-    }
-    #about p {
-        font-size: 1rem;
-    }
-    .contact form {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 496px) {
-    .header-content p {
-        width: 100%;
-    }
-    .header-content h1 {
-        font-size: 2.2rem;
-    }
-    #about {
-        margin-top: 25rem;
-    }
-    .img-detection p {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 425px) {
-    #about {
-        margin-top: 25rem;
-    }
-    .header-content h1 {
-        font-size: 1.8rem;
-    }
-    .header-content p {
-        font-size: 1.1rem;
-    }
-    .logo {
-        max-width: 4rem;
-    }
-    .logo-title {
-        margin-left: 0;
-    }
-    .mission p {
-        font-size: 1.2rem;
-    }
-    .valprop p {
-        width: 100%;
-    }
-    .servies img, .valprop img {
-        height: 80px;
-        width: 80px;
+    .footer-logo {
+        margin-right: 1rem;
+        margin-bottom: 0; /* Remove mobile margin for stacked items */
     }
     footer p {
-        font-size: 0.8rem;
-    }
-    footer img {
-        height: 45px;
-        width: 45px;
+        display: inline-block; /* Display inline for horizontal layout */
     }
 }
-@media screen and (min-width: 768px) {
-    .menu-toggle {
-        opacity: 0;
-        display: none;
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .navbar-brand .logo {
+        max-width: 4rem;
     }
-}
-@media screen and (max-height: 768px) {
-    .no-webp .header, .webp .header {
-        max-height: 130vh;
+    .navbar-brand .logo-text {
+        max-width: 14rem;
     }
-    #about {
-        margin-top: 14rem;
+    .header-content {
+        text-align: left; /* Align text left on md and up */
+        padding-top: 4rem; /* Restore larger padding */
+        padding-bottom: 4rem;
     }
-}
-@media screen and (max-height: 635px) {
-    .no-webp .header, .webp .header {
-        max-height: 150vh;
+    .header-content .tagline {
+        font-size: clamp(4rem, 6vw, 7rem); /* Larger fluid font for desktop */
     }
-}
-@media screen and (max-height: 548px) {
-    .no-webp .header, .webp .header {
-        max-height: 180vh;
+    .header-content p {
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+        margin-left: unset; /* Remove auto margins */
+        margin-right: unset;
     }
-}
-@media screen and (max-height: 420px) {
+    .mockup-container {
+        text-align: right; /* Align mockup right on md and up */
+    }
     #mockup {
-        height: 30%;
+        max-height: 500px; /* Adjust max height for desktop */
+    }
+    .mission-container .col-lg-6 {
+        margin-bottom: 0; /* Remove stacking margin */
+    }
+    #mission-img {
+        max-width: 100%; /* Full width for image */
+    }
+    .mission .title {
+        text-align: left !important;
+    }
+    .mission p {
+        text-align: left !important;
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    /* Solutions Section layout for md and up */
+    .solutions .row:nth-child(odd) .col-md-4 { /* First solution text */
+        order: 1;
+        text-align: left;
+    }
+    .solutions .row:nth-child(odd) .col-md-8 { /* First solution line */
+        order: 2;
+    }
+    .solutions .row:nth-child(even) .col-md-8 { /* Second solution line */
+        order: 1;
+    }
+    .solutions .row:nth-child(even) .col-md-4 { /* Second solution text */
+        order: 2;
+        text-align: right;
+    }
+    .solutions .row .col-md-4,
+    .solutions .row .col-md-8 {
+        margin-bottom: 0; /* Remove mobile stacking margin */
+    }
+    .lines-left, .lines-right {
+        display: block !important; /* Show lines on md and up */
+    }
+    .footer-content {
+        flex-direction: row; /* Horizontal layout on md and up */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .nav-item {
+        margin: 0 0.8rem;
+    }
+    .header-content .tagline {
+        font-size: clamp(5rem, 4.5vw, 7rem); /* Adjust again for larger screens */
+    }
+    .header-content p {
+        font-size: clamp(1.3rem, 1.5vw, 1.6rem);
+    }
+    .mockup-container {
+        margin-top: 0; /* Remove mobile margin */
+    }
+    #mockup {
+        max-height: 600px; /* Larger max height on large desktops */
+    }
+    #mission-img {
+        max-width: 600px; /* Max width for mission image */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .header-content .tagline {
+        font-size: 6rem; /* Explicit size for extra large screens */
+    }
+    .header-content p {
+        font-size: 1.6rem;
+    }
+}
+
+/* Print Styles (optional, but good practice) */
+@media print {
+    .navbar, .contact-btn, #particles-js {
+        display: none !important; /* Hide non-essential elements for print */
+    }
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+    a {
+        text-decoration: underline;
+        color: #000;
     }
 }

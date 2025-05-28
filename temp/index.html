@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="theme-color" content="#fff">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Contxtra is a platform that connects social media conversation to its context, making it effortless to gain a deeper understanding of topics seen online.">
         <meta property="og:image" content="/assets/images/preview.png">
         <meta property="og:image:type" content="image/png">
@@ -12,31 +12,25 @@
 
         <title>CONTXTRA | See Beyond the Scroll</title>
 
-        <link rel="stylesheet" href="bootstrap.min.css">
-        <script src="bootstrap.bundle.min.js"></script>
-        <script src="jquery-3.3.1.slim.min.js"></script>
-        <script src="bootstrap.min.js"></script>
-        <script src="modernizr.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@500;700;800&display=swap" rel="stylesheet">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         
         <link rel="icon" href="assets/images/favicon.ico">
         <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="particles.css">
     </head>
     <body>
-        <div class="container-fluid" id="page">
-            <div class="header">
-                <div class="nav-wrapper p-3" id="top">
+        <div class="container-fluid p-0" id="page"> <div class="header position-relative"> <div id="particles-js"></div> <div class="nav-wrapper p-3" id="top">
                     <nav class="navbar navbar-expand-md page-content" id="banner">
-                        <a href="/">
-                            <img src="assets/images/icon.png" alt="CONTXTRA Logo" class="logo"></img>
-                            <img src="assets/images/textmark.png" alt="CONTXTRA Logo" class="logo-text"></img>
+                        <a class="navbar-brand d-flex align-items-center" href="/">
+                            <img src="assets/images/icon.png" alt="CONTXTRA Icon" class="logo img-fluid">
+                            <img src="assets/images/textmark.png" alt="CONTXTRA Text Logo" class="logo-text img-fluid ms-2">
                         </a>
-                
-                        <div class=menu-toggle>
-                            <label for="check" onclick="checkCheck()">
-                                <input type="checkbox" id="check" data-toggle="collapse" data-target="#collapseNav">
-                                <div class="hamburger"></div>
-                            </label>
-                        </div>
+                        
+                        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNav" aria-controls="collapseNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="hamburger"></div>
+                        </button>
                 
                         <div class="collapse navbar-collapse justify-content-end" id="collapseNav">
                             <ul class="navbar-nav">
@@ -48,100 +42,85 @@
                         </div>
                     </nav>
                 </div>
-                <div class="header-content page-content row">
-                    <div class="col-lg-6 animate-reveal-y">
-                        <h1 class="tagline">See Beyond the Scroll.</h1>
-                        <p class="my-4">Contxtra gives context to the conversation.</p>
-                        <a class="contact-btn" href="#contact"><button>Join the Beta!</button></a>
-                        <div id="about">
-                            <h1 class="title animate-reveal-y delay">What is CONTXTRA</h1>
-                            <p>Contxtra is a platform that connects social media conversation to its context, making it effortless to gain a deeper understanding of topics seen online.</p>
-                        </div>
+                <div class="header-content page-content row align-items-center justify-content-center"> <div class="col-lg-6 col-md-12 animate-reveal-y text-center text-lg-start"> <h1 class="tagline">See Beyond the Scroll.</h1>
+                        <p class="my-4">CONTXTRA gives context to the conversation.</p>
+                        <a class="contact-btn" href="#contact"><button type="button">Join the Beta!</button></a>
                     </div>
-                    <div class="col-lg-6 mockup-container animate-reveal-y delay">
-                        <picture>
-                            <source type="image/webp" srcset="assets/images/webp/mockup.webp">
-                            <source type="image/png" srcset="assets/images/mockup.png">
-                            <img src="assets/images/mockup.png" alt="Phone Mockup" id="mockup">
+                    <div class="col-lg-6 col-md-12 mockup-container animate-reveal-y delay text-center"> <picture>
+                            <source media="(max-width: 767px)" srcset="assets/images/mockup.png"> <img src="assets/images/mockup.png" alt="Phone Mockup" id="mockup" class="img-fluid">
                         </picture>
                     </div>
                 </div>
             </div>
-            <div class="page-content mt-5">
-                <div class="services row">
-                    <div class="col-md-4">
-                        <picture>
-                            <source type="image/png" srcset="assets/images/tempicon.png">
-                            <img src="assets/images/tempicon.png" alt="Effortless Context">
-                        </picture>
-                        <h3>Efforless Context</h3>
-                        <p>Access extra context to topics you see online.</p>
+
+            <div class="page-content py-5" id="about">
+                <h1 class="title text-center animate-reveal-y delay">What is CONTXTRA</h1>
+                <p class="text-center">CONTXTRA is a news aggregator for social media, giving extra context to topics you see online. Query a post with CONTXTRA to receive relevant news articles in just a few clicks.</p>
+            </div>
+
+            <div class="page-content py-5"> <div class="services row text-center justify-content-center"> <div class="col-md-4 col-12 mb-4"> <img src="assets/images/tempicon.png" alt="Effortless Context" class="img-fluid service-icon">
+                        <h3>Effortless Context</h3>
+                        <p>Access extra context in just a few clicks</p>
                     </div>
-                    <div class="col-md-4">
-                            <source type="image/png" srcset="assets/images/tempicon.png">
-                            <img src="assets/images/tempicon.png" alt="Information Without Influence">
-                        </picture>
+                    <div class="col-md-4 col-12 mb-4">
+                        <img src="assets/images/tempicon.png" alt="Information Without Influence" class="img-fluid service-icon">
                         <h3>Information Without Influence</h3>
-                        <p>Explore a variety of relevant sources.</p>
+                        <p>Explore a variety of relevant news sources</p>
                     </div>
-                    <div class="col-md-4">
-                        <picture>
-                            <source type="image/png" srcset="assets/images/tempicon.png">
-                            <img src="assets/images/tempicon.png" alt="Identify Misleading Narratives">
-                        </picture>
+                    <div class="col-md-4 col-12 mb-4">
+                        <img src="assets/images/tempicon.png" alt="Identify Misleading Narratives" class="img-fluid service-icon">
                         <h3>Identify Misleading Narratives</h3>
-                        <p>Giving you the tools to exercise your own judgment.</p>
+                        <p>Giving you the tools to exercise your own judgment</p>
                     </div>
                 </div>
             </div>
-            <div class="mission">
-                <div class="mission-container row">
-                    <div class="col-lg-6">
-                        <picture>
-                            <source type="image/webp" srcset="assets/images/webp/mission.webp">
-                            <source type="image/png" srcset="assets/images/mission.png">
-                            <img src="assets/images/mission.png" alt="Our Mission" id="mission-img">
+
+            <div class="mission py-5">
+                <div class="mission-container page-content row align-items-center justify-content-center"> <div class="col-lg-6 col-md-12 text-center order-md-2 order-2"> <h1 class="title text-center text-lg-start">Our Mission</h1>
+                        <p class="text-center text-lg-start">We’re on a mission to give social media users the tools they need to stay informed, directly from their feed.</p>
+                        <a class="contact-btn" href="#contact"><button type="button">Get in Touch</button></a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 text-center order-md-1 order-1 mb-4 mb-lg-0"> <picture>
+                            <source media="(max-width: 767px)" srcset="assets/images/mission.png"> <img src="assets/images/mission.png" alt="Our Mission" id="mission-img" class="img-fluid">
                         </picture>
                     </div>
-                    <div class="col-lg-6 mission-content">
-                        <h1 class="title">Our Mission</h1>
-                        <p>We're on a mission to empower and inform social media users by making context accessible to everyone.</p>
-                        <a class="contact-btn" href="#contact"><button>Get in Touch</button></a>
-                    </div>
                 </div>
             </div>
-            <div class="page-content solutions" id="solutions">
+
+            <div class="page-content solutions py-5" id="solutions">
                 <h1 class="title text-center text-dark">How It Works</h1>
-                <div class="row my-5">
-                    <div class="col-4">
-                        <h4>1. See something online?</h4>
-                        <p>Currently working on text-only posts from X and Bluesky - Greater functionality coming soon!</p>
+                <div class="row my-5 align-items-center">
+                    <div class="col-md-4 col-12 order-md-1 order-2 text-center text-md-start mb-4 mb-md-0">
+                        <h4>1. Find a post to query</h4>
+                        <p>Post must include text. Greater functionality coming soon!</p>
                     </div>
-                    <div class="col-8">
-                        <div class="lines-right"></div>
+                    <div class="col-md-8 col-12 order-md-2 order-1 d-flex justify-content-center">
+                        <div class="lines-right d-none d-md-block"></div> 
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-8">
-                        <div class="lines-left"></div>
+                <div class="row mt-5 align-items-center">
+                    <div class="col-md-8 col-12 order-md-1 order-2 d-flex justify-content-center">
+                        <div class="lines-left d-none d-md-block"></div> 
                     </div>
-                    <div class="col-4" id="text-right">
+                    <div class="col-md-4 col-12 order-md-1 order-1 text-center text-md-end mb-4 mb-md-0" id="text-right">
                         <h4>2. Share with CONTXTRA</h4>
-                        <p>Copy and paste link to CONTXTRA - Direct post sharing coming soon!</p>
+                        <p>Copy and paste link to CONTXTRA. Share to app coming soon! </p>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-4">
+                <div class="row mt-5 align-items-center">
+                    <div class="col-md-4 col-12 text-center text-md-start order-1">
                         <h4>3. CONTXTRA kicks in</h4>
                         <p>Analysing the post, identifying the topic and gathering relevant context for you to explore</p>
                     </div>
+                    <div class="col-md-8 col-12 d-none d-md-flex justify-content-center"></div>
                 </div>
             </div>
-            <div class="contact">
+
+            <div class="contact py-5">
                 <div class="page-content" id="contact">
                     <h1 class="title text-center">GET INVOLVED</h1>
                     <p class="text-center"><b>Be the first to shape the future of online context.</b></p>
-                    <p>Contxtra is currently in early access, and we're looking for curious users and thoughtful testers.</p>
+                    <p class="text-center">Contxtra is currently in early access, and we're looking for curious users and thoughtful testers.</p>
                     <form action="#" method="POST" class="position-relative d-flex justify-content-center w-100">
                         <div class="input-group input-group-pill">
                             <input
@@ -164,27 +143,30 @@
                     </form>
                 </div>
             </div>
+
             <footer>
-                <div class="footer-content">
-                    <img src="assets/images/icon-white.png" alt="CONTXTRA Logo">
-                    <p>&copy CONTXTRA 2025. All Rights Reserved</p>
+                <div class="footer-content d-flex flex-column flex-md-row align-items-center justify-content-center py-3">
+                    <img src="assets/images/icon-white.png" alt="CONTXTRA Logo" class="img-fluid mb-2 mb-md-0 me-md-3 footer-logo">
+                    <p class="mb-0">&copy; CONTXTRA 2025. All Rights Reserved</p>
                 </div>
             </footer>
         </div>
-        <div id="particles-js"></div>
+        
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="scripts/particles.min.js"></script>
     <script src="scripts/script.js"></script>
     <script>
-        const navLinks = document.querySelectorAll('.nav-item');
-        const menuToggle = document.getElementById('collapseNav');
-        const checkbox = document.getElementById('check');
-        const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+        const navLinks = document.querySelectorAll('.nav-item .nav-link'); // Select actual links
+        const collapseNav = document.getElementById('collapseNav'); // Get the collapsible element
+        const bsCollapse = new bootstrap.Collapse(collapseNav, { toggle: false }); // Init Bootstrap Collapse instance
 
-        navLinks.forEach((l) => {
-            l.addEventListener('click', () => {
-                bsCollapse.toggle();
-                checkbox.checked = false;
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                if (collapseNav.classList.contains('show')) {
+                    bsCollapse.hide(); // Hide the collapse menu
+                }
             });
         });
     </script>

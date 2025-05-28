@@ -2,15 +2,18 @@
 body {
     margin: 0;
     font: normal 75% Arial, Helvetica, sans-serif;
-  }
-  canvas {
+}
+canvas {
     display: block;
     vertical-align: bottom;
-  } /* ---- particles.js container ---- */
-  #particles-js {
-    position: absolute;
-    width: 100vw;
-    height: 120vh;
-    background-color: #ffffff;
-  } /* ---- stats.js ---- */
-  
+}
+/* ---- particles.js container ---- */
+#particles-js {
+    position: absolute; /* Kept absolute, but `stylesheet.css` will manage `z-index` and parent `position` */
+    width: 100%; /* Changed from 100vw to 100% to fill parent */
+    height: 100%; /* Changed from 120vh to 100% to fill parent, controlled by header's height */
+    background-color: transparent; /* Changed from #ffffff to transparent to avoid obscuring content */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensures particles are behind content */
+}
