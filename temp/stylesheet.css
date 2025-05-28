@@ -205,11 +205,18 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+.platform-container img {
+    margin: 1rem;
+    transition: filter 0.5s ease;
+}
+.platform-container img:hover {
+    filter: opacity(0.4);
+}
 
 /* Services Section */
 .services {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 .service-icon { 
     height: 80px; /* Fixed height for icons, can be made responsive with `max-width` if preferred */
