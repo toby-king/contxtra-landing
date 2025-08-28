@@ -190,6 +190,9 @@ p {
     font-size: clamp(1.8rem, 5vw, 2.8rem); /* Fluid font size */
     margin-bottom: 1rem;
 }
+.subtitle {
+    color: #622D91;
+}
 
 /* About Section */
 #about {
@@ -390,6 +393,32 @@ footer p {
     margin: 0;
 }
 
+/* About Page */
+#video-lg {
+    display: none;
+}
+#video-md {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+.headshot {
+    width:50%;
+    margin: 0 auto;
+}
+.role {
+    font-size: 1.3rem;
+}
+.parallax {
+    background-image: url("assets/images/parallax.jpg");
+    background-size: cover;
+	min-height: 25vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Animations (Adjusted for fluidity) */
 .animate-reveal-y {
     opacity: 0;
@@ -579,6 +608,18 @@ footer p {
     }
     .footer-content {
         flex-direction: row; /* Horizontal layout on md and up */
+    }
+    .headshot {
+        width: 80%;
+    }
+    video {
+        width: 100%;
+    }
+    #video-lg {
+        display: block;
+    }
+    #video-md {
+        display: none;
     }
 }
 
